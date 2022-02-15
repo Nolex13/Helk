@@ -11,6 +11,13 @@ The object already contains the basic operator overload for summing, subtracting
 100.euro / 60.euro shouldBe 1.67.euro
 ```
 
+and some conversion function from EUR to custom currency and vice versa:
+```kotlin
+val conversionRate = BigDecimal("0.8392")
+100.euro convertTo GBP usingRate conversionRate shouldBe 83.92.gbp
+100.gbp convertTo EUR usingRate conversionRate shouldBe 119.16.euro
+```
+
 There are also some handy builder like:
 ```kotlin
 BigDecimal("10.56").euro
