@@ -7,6 +7,29 @@
     <groupId>dev.helk</groupId>
     <artifactId>core</artifactId>
     <version>0.1.0</version>
+    <url>https://github.com/Nolex13/Helk</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git://github.com//Nolex13/Helk.git</connection>
+        <developerConnection>scm:git:git://github.com//Nolex13/Helk.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/Nolex13/Helk</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>Nolex13</id>
+            <name>Alex Stabile</name>
+            <email>pauciuri@gmail.com</email>
+            <url>https://github.com/Nolex13</url>
+        </developer>
+    </developers>
 
     <name>com.helk:core</name>
     <description>A simple library written in Kotlin with utils and useful functions</description>
