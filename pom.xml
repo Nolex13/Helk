@@ -177,7 +177,6 @@
                 <version>1.6.10</version>
                 <executions>
                     <execution>
-                        <phase>pre-site</phase>
                         <goals>
                             <goal>javadocJar</goal>
                         </goals>
