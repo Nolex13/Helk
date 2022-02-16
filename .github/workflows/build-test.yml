@@ -1,6 +1,3 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
 name: Build & Test
 
 on:
@@ -20,9 +17,5 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        gpg-passphrase: MAVEN_GPG_PASSPHRASE
     - name: Verify with Maven
-      run: mvn -B --update-snapshots verify -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }}
-      env:
-        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+      run: mvn -B --update-snapshots verify
