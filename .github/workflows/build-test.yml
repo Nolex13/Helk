@@ -20,5 +20,9 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
+        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+        gpg-passphrase: MAVEN_GPG_PASSPHRASE
     - name: Verify with Maven
       run: mvn -B --update-snapshots verify
+      env:
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
