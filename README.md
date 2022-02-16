@@ -1,6 +1,16 @@
 # Helk
 A simple library written in Kotlin with utils and useful functions
 
+## Getting started
+Just add the dependency to you pom.xml and enjoy
+```xml
+<dependency>
+  <groupId>dev.helk</groupId>
+  <artifactId>core</artifactId>
+  <version>0.1.1</version>
+</dependency>
+```
+
 ## Koney (Money)
 Simple money object with two properties: amount[BigDecimal] and currency[[Kurrency]](#kurrency)
 The object already contains the basic operator overload for summing, subtracting, multiplying and dividing the money of the same currency directly
