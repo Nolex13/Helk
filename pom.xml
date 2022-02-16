@@ -183,7 +183,8 @@
                 <version>3.3.2</version>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
+                        <id>javadoc-jar</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
