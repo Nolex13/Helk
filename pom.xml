@@ -177,6 +177,7 @@
                 <version>1.6.10</version>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>javadocJar</goal>
                         </goals>
@@ -197,7 +198,7 @@
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
-                        <phase>verify</phase>
+                        <phase>deploy</phase>
                         <goals>
                             <goal>sign</goal>
                         </goals>
