@@ -204,7 +204,7 @@
     </build>
     <profiles>
         <profile>
-            <id>release</id>
+            <id>deploy</id>
             <build>
                 <plugins>
                     <plugin>
