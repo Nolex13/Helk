@@ -9,6 +9,9 @@ import koney.exceptions.SumDifferentCurrencyException
 import java.math.BigDecimal
 import java.math.RoundingMode.HALF_UP
 
+/**
+ * Koney (Money)
+ */
 data class Koney(
     val amount: BigDecimal,
     val currency: Kurrency
