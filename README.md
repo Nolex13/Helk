@@ -1,3 +1,6 @@
+[![Build & Test](https://github.com/Nolex13/Helk/actions/workflows/build-test.yml/badge.svg)](https://github.com/Nolex13/Helk/actions/workflows/build-test.yml)
+[![Publish package to Maven Central Repository](https://github.com/Nolex13/Helk/actions/workflows/deploy.yml/badge.svg)](https://github.com/Nolex13/Helk/actions/workflows/deploy.yml)
+
 # Helk
 A simple library written in Kotlin with utils and useful functions
 
