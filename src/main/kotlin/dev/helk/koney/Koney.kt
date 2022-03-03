@@ -1,6 +1,5 @@
 package dev.helk.koney
 
-import com.fasterxml.jackson.annotation.JsonCreator
 import dev.helk.koney.Kurrency.Companion.EUR
 import dev.helk.koney.Kurrency.Companion.GBP
 import dev.helk.koney.exceptions.DivideDifferentCurrencyException
