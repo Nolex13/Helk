@@ -1,5 +1,6 @@
 package koney
 
+import com.fasterxml.jackson.annotation.JsonCreator
 import koney.Kurrency.Companion.EUR
 import koney.Kurrency.Companion.GBP
 import koney.exceptions.DivideDifferentCurrencyException
@@ -66,6 +67,20 @@ data class Koney(
                 this, currency
             )
         }
+
+    companion object {
+        @JsonCreator
+        @JvmStatic
+        fun fromJson(
+            amount: BigDecimal,
+            currency: String
+        ): Koney {
+            return Koney(
+                amount,
+                Kurrency(currency)
+            )
+        }
+    }
 }
 
 interface MoneyConverter {
