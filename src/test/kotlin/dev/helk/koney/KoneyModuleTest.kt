@@ -5,7 +5,7 @@ import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
 internal class KoneyModuleTest {
-    private val objectMapper = ObjectMapper().registerModule(KoneyModule())
+    private val objectMapper = ObjectMapper().findAndRegisterModules()
 
     @Test
     fun `serialize and deserialize correctly`() {

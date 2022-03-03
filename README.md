@@ -44,6 +44,15 @@ BigDecimal("10.56").gbp
 ```
 at the moment the only currencies available in this buidlers are `euro` and `gbp` so, if needed, fill free to open a Merge Request
 
+Serialization and deserialization are also included by default using Jackson. Remember to register the right module using:
+```
+val objectMapper = ObjectMapper().registerModule(KoneyModule())
+```
+or
+```
+val objectMapper = ObjectMapper().findAndRegisterModules()
+```
+
 ### <a name="kurrency"></a>Kurrency (Currency)
 Simple value class that represents the currency
 
