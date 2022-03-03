@@ -10,7 +10,7 @@ Just add the dependency to you pom.xml and enjoy
 <dependency>
   <groupId>dev.helk</groupId>
   <artifactId>core</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 
