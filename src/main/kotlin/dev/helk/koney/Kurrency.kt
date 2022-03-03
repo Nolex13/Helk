@@ -1,4 +1,4 @@
-package koney
+package dev.helk.koney
 
 @JvmInline
 value class Kurrency(

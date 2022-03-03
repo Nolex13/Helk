@@ -1,6 +1,6 @@
-package koney.exceptions
+package dev.helk.koney.exceptions
 
-import koney.Kurrency
+import dev.helk.koney.Kurrency
 
 class DivideDifferentCurrencyException(
     firstCurrency: Kurrency,

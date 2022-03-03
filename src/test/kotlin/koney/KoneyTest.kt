@@ -1,13 +1,15 @@
 package koney
 
+import dev.helk.koney.euro
+import dev.helk.koney.gbp
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
-import koney.Kurrency.Companion.EUR
-import koney.Kurrency.Companion.GBP
-import koney.exceptions.DivideDifferentCurrencyException
-import koney.exceptions.MultiplyDifferentCurrencyException
-import koney.exceptions.SubtractDifferentCurrencyException
-import koney.exceptions.SumDifferentCurrencyException
+import dev.helk.koney.Kurrency.Companion.EUR
+import dev.helk.koney.Kurrency.Companion.GBP
+import dev.helk.koney.exceptions.DivideDifferentCurrencyException
+import dev.helk.koney.exceptions.MultiplyDifferentCurrencyException
+import dev.helk.koney.exceptions.SubtractDifferentCurrencyException
+import dev.helk.koney.exceptions.SumDifferentCurrencyException
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal
 
