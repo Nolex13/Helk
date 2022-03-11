@@ -6,10 +6,12 @@ import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
 import dev.helk.koney.Kurrency.Companion.EUR
 import dev.helk.koney.Kurrency.Companion.GBP
+import dev.helk.koney.Kurrency.Companion.KWD
 import dev.helk.koney.exceptions.DivideDifferentCurrencyException
 import dev.helk.koney.exceptions.MultiplyDifferentCurrencyException
 import dev.helk.koney.exceptions.SubtractDifferentCurrencyException
 import dev.helk.koney.exceptions.SumDifferentCurrencyException
+import dev.helk.koney.ofCurrency
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal
 
@@ -44,6 +46,11 @@ internal class KoneyTest {
     }
 
     @Test
+    fun `multiply two money with the same currency with 3 decimals`() {
+        100.567.ofCurrency(KWD) * 60.234.ofCurrency(KWD) shouldBe 6057.553.ofCurrency(KWD)
+    }
+
+    @Test
     fun `multiply two money with different currencies`() {
         shouldThrow<MultiplyDifferentCurrencyException> {
             100.euro * 60.gbp shouldBe 6000.euro
@@ -53,6 +60,11 @@ internal class KoneyTest {
     @Test
     fun `divide two money with the same currency`() {
         100.euro / 60.euro shouldBe 1.67.euro
+    }
+
+    @Test
+    fun `divide two money with the same currency with 3 decimals`() {
+        100.567.ofCurrency(KWD) / 60.234.ofCurrency(KWD) shouldBe 1.670.ofCurrency(KWD)
     }
 
     @Test

@@ -39,7 +39,7 @@ data class Koney(
     operator fun times(money: Koney) =
         if (this.currency == money.currency) {
             Koney(
-                (amount * money.amount).setScale(2, HALF_UP),
+                (amount * money.amount).setScale(this.currency.defaultFractionDigits(), HALF_UP),
                 currency
             )
         } else {
@@ -49,7 +49,7 @@ data class Koney(
     operator fun div(money: Koney) =
         if (this.currency == money.currency) {
             Koney(
-                amount.divide(money.amount, 2, HALF_UP),
+                amount.divide(money.amount, this.currency.defaultFractionDigits(), HALF_UP),
                 currency
             )
         } else {
@@ -98,18 +98,20 @@ infix fun BigDecimal.ofCurrency(currency: Kurrency): Koney =
     Koney(this, currency)
 
 infix fun String.ofCurrency(currency: Kurrency): Koney =
-    Koney(this.toBigDecimal().setScale(2, HALF_UP), currency)
+    Koney(this.toBigDecimal().setScale(currency.defaultFractionDigits(), HALF_UP), currency)
 
 infix fun Double.ofCurrency(currency: Kurrency): Koney =
-    Koney(this.toBigDecimal().setScale(2, HALF_UP), currency)
+    Koney(this.toBigDecimal().setScale(currency.defaultFractionDigits(), HALF_UP), currency)
 
 infix fun Int.ofCurrency(currency: Kurrency): Koney =
-    Koney(this.toBigDecimal().setScale(2, HALF_UP), currency)
+    Koney(this.toBigDecimal().setScale(currency.defaultFractionDigits(), HALF_UP), currency)
 
 val BigDecimal.euro get() = this.ofCurrency(EUR)
 val String.euro get() = this.ofCurrency(EUR)
+val Int.euro get() = this.ofCurrency(EUR)
+val Double.euro get() = this.ofCurrency(EUR)
+
+val BigDecimal.gbp get() = this.ofCurrency(EUR)
 val String.gbp get() = this.ofCurrency(GBP)
 val Int.gbp get() = this.ofCurrency(GBP)
 val Double.gbp get() = this.ofCurrency(GBP)
-val Double.euro get() = this.ofCurrency(EUR)
-val Int.euro get() = this.ofCurrency(EUR)

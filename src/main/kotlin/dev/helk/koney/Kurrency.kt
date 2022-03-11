@@ -1,10 +1,13 @@
 package dev.helk.koney
 
+import java.util.Currency
+
 @JvmInline
 value class Kurrency(
     val value: String
 ) {
-
+    fun defaultFractionDigits() =
+        Currency.getInstance(value).defaultFractionDigits
 
     companion object {
         val AFN = Kurrency("AFN")

@@ -18,6 +18,13 @@ internal class KurrencyTest {
         Kurrency.EUR.toString() shouldBe "EUR"
     }
 
+    @Test
+    fun `fraction digits`() {
+        Kurrency.EUR.defaultFractionDigits() shouldBe 2
+        Kurrency.KWD.defaultFractionDigits() shouldBe 3
+        Kurrency.KMF.defaultFractionDigits() shouldBe 0
+    }
+
     companion object {
         val currencies = setOf(
             "AFN" to Kurrency.AFN,
