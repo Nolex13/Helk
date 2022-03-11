@@ -81,6 +81,12 @@ internal class KoneyTest {
     }
 
     @Test
+    fun `conversion from EUR to other currency with 3 decimals`() {
+        val conversionRate = BigDecimal("0.839212")
+        100.euro convertTo KWD usingRate conversionRate shouldBe 83.921.ofCurrency(KWD)
+    }
+
+    @Test
     fun `conversion from GPB to EUR`() {
         val conversionRate = BigDecimal("0.8392")
         100.gbp convertTo EUR usingRate conversionRate shouldBe 119.16.euro

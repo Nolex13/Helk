@@ -78,7 +78,7 @@ private class MoneyToOtherCurrencyConverter(
 ) : MoneyConverter {
     override infix fun usingRate(conversionRate: BigDecimal): Koney =
         Koney(
-            (actualMoney.amount * conversionRate).setScale(2, HALF_UP),
+            (actualMoney.amount * conversionRate).setScale(newCurrency.defaultFractionDigits(), HALF_UP),
             newCurrency
         )
 }
