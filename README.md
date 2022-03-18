@@ -10,12 +10,21 @@ Just add the dependency to you pom.xml and enjoy
 <dependency>
   <groupId>dev.helk</groupId>
   <artifactId>core</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 
 ## Koney (Money)
 Simple money object with two properties: amount[BigDecimal] and currency[[Kurrency]](#kurrency)
+
+```xml
+<dependency>
+    <groupId>dev.helk</groupId>
+    <artifactId>koney</artifactId>
+    <version>0.1.3</version>
+</dependency>
+```
+
 The object already contains the basic operator overload for summing, subtracting, multiplying and dividing the money of the same currency directly
 ```kotlin
 100.euro + 50.euro shouldBe 150.euro
@@ -63,3 +72,20 @@ AFN shouldBe Currency("AFN")
 GBP shouldBe Currency("GBP")
 ```
 all the currencies are present under Currency.companion.*
+
+## Future (CompletableFuture)
+Simple CompletableFuture wrapper to give the CompletableFuture API a more Kotlin style!
+
+```xml
+<dependency>
+    <groupId>dev.helk</groupId>
+    <artifactId>koney</artifactId>
+    <version>0.1.3</version>
+</dependency>
+```
+
+The library comes with some useful extension functions
+
+```kotlin
+Future { "a callback that returns a string" } shouldBe CompletableFuture.supplyAsync { "a callback that returns a string" }
+```
