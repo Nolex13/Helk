@@ -1,6 +1,7 @@
-package dev.helk.koney.exceptions
+package dev.helk.exceptions
 
-import dev.helk.koney.Kurrency
+import dev.helk.Kurrency
+
 
 open class DifferentCurrencyException(
     firstCurrency: Kurrency,

@@ -1,4 +1,4 @@
-package dev.helk.koney
+package dev.helk
 
 import com.fasterxml.jackson.core.JsonGenerator
 import com.fasterxml.jackson.core.JsonParser
@@ -32,7 +32,7 @@ open class KoneySerializer : StdSerializer<Koney>(Koney::class.java) {
     override fun serialize(koney: Koney, jsonGenerator: JsonGenerator, serializerProvider: SerializerProvider) {
         jsonGenerator.writeStartObject()
         jsonGenerator.writeStringField("amount", koney.amount.toPlainString())
-        jsonGenerator.writeStringField("currency", koney.currency.value.toString())
+        jsonGenerator.writeStringField("currency", koney.currency.value)
         jsonGenerator.writeEndObject()
     }
 }

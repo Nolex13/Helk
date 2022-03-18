@@ -1,11 +1,11 @@
-package dev.helk.koney
+package dev.helk
 
-import dev.helk.koney.Kurrency.Companion.EUR
-import dev.helk.koney.Kurrency.Companion.GBP
-import dev.helk.koney.exceptions.DivideDifferentCurrencyException
-import dev.helk.koney.exceptions.MultiplyDifferentCurrencyException
-import dev.helk.koney.exceptions.SubtractDifferentCurrencyException
-import dev.helk.koney.exceptions.SumDifferentCurrencyException
+import dev.helk.Kurrency.Companion.EUR
+import dev.helk.Kurrency.Companion.GBP
+import dev.helk.exceptions.DivideDifferentCurrencyException
+import dev.helk.exceptions.MultiplyDifferentCurrencyException
+import dev.helk.exceptions.SubtractDifferentCurrencyException
+import dev.helk.exceptions.SumDifferentCurrencyException
 import java.math.BigDecimal
 import java.math.RoundingMode.HALF_UP
 

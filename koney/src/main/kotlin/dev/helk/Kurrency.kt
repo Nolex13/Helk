@@ -1,4 +1,4 @@
-package dev.helk.koney
+package dev.helk
 
 import java.util.Currency
 

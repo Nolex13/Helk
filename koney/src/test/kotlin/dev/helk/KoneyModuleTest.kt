@@ -1,4 +1,4 @@
-package dev.helk.koney
+package dev.helk
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotest.matchers.shouldBe

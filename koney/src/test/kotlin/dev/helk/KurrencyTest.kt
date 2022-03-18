@@ -1,6 +1,5 @@
-package koney
+package dev.helk
 
-import dev.helk.koney.Kurrency
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
