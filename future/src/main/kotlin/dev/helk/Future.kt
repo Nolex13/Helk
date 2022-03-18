@@ -3,9 +3,9 @@ package dev.helk
 import java.util.concurrent.CompletableFuture
 
 
+@Suppress("FunctionName")
 fun <T> Future(callback: () -> T): CompletableFuture<T> =
     CompletableFuture.supplyAsync(callback)
         .exceptionally {
-            val unwrappedError: Throwable = it.cause ?: it
-            throw unwrappedError
+            throw it.cause ?: it
         }
