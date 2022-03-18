@@ -1,0 +1,6 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:dev.helk/Kurrency.Companion///PointingToDeclaration/dev/helk/Kurrency.Companion.html
+dev.helk
+dev.helk.exceptions
+

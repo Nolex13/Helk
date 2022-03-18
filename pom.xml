@@ -24,7 +24,16 @@
     </scm>
     <modules>
         <module>koney</module>
+        <module>future</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <developers>
         <developer>
             <id>Nolex13</id>
