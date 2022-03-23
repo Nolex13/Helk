@@ -10,7 +10,7 @@ Just add the dependency to you pom.xml and enjoy
 <dependency>
   <groupId>dev.helk</groupId>
   <artifactId>core</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.4</version>
 </dependency>
 ```
 
@@ -80,7 +80,7 @@ Simple CompletableFuture wrapper to give the CompletableFuture API a more Kotlin
 <dependency>
     <groupId>dev.helk</groupId>
     <artifactId>future</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
 </dependency>
 ```
 
@@ -88,4 +88,45 @@ The library comes with some useful extension functions
 
 ```kotlin
 Future { "a callback that returns a string" } shouldBe CompletableFuture.supplyAsync { "a callback that returns a string" }
+```
+
+## flatMap
+ You are able to concatenate multiple CompletableFuture creating a happy path flow
+ ```kotlin
+ Future { "13.4" }.flatMap { stringValue ->
+    Future{BigDecimal(stringValue)}.flatMap { bigDecimalValue ->
+        Future { bigDecimalValue.toDouble() }
+    }
+}.let {
+    it shouldBe 13.4
+}
+ ```
+
+## fold
+You are able to fold the CompletableFuture remapping both the success and the failure path:
+```kotlin
+ Future<String> { 
+    //something happens 
+ }.fold(
+    { "return value in case of failure [${it.message}]" },
+    { "return value in case of success [$it]" }
+)
+```
+
+## let
+Returns the result of the CompletableFuture syncronously
+
+```kotlin
+Future("a CompletableFuture").let {
+    it shouldBe "a CompletableFuture"
+}
+```
+
+## mapLeft
+Remap a failing CompletableFuture exception
+
+```kotlin
+Future { throw AnError() }.mapLeft {
+    AnotherError()
+}
 ```
