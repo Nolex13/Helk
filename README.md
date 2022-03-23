@@ -79,7 +79,7 @@ Simple CompletableFuture wrapper to give the CompletableFuture API a more Kotlin
 ```xml
 <dependency>
     <groupId>dev.helk</groupId>
-    <artifactId>koney</artifactId>
+    <artifactId>future</artifactId>
     <version>0.1.3</version>
 </dependency>
 ```
