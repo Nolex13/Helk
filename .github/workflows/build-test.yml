@@ -16,6 +16,5 @@ jobs:
       with:
         java-version: '21'
         distribution: 'adopt'
-        cache: maven
     - name: Verify with Maven
       run: mvn -B --update-snapshots verify
